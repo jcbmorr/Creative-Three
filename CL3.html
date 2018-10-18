@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To Do List</title>
+
+
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="CL3.css">
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+
+  <script src="CL3.js"></script>
+
+
+</head>
+<body ng-app="News">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <ui-view></ui-view>
+    </div>
+  </div>
+
+  <script type="text/ng-template" id="/home.html">
+    <div class="page-header">
+      <h1>To Do List</h1>
+    </div>
+
+    
+    
+    <form ng-submit="addPost()"
+      style="margin-top:30px;">
+      <h3>Add new task</h3>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">+</button>      
+         <input type="text" 
+        class="form-control"
+        placeholder="Task"
+        ng-model="formContent"></input>
+
+      </div>
+    </form>
+    
+    <div ng-repeat="post in posts | orderBy:'-priority'">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Green_Arrow_Up_Darker.svg"
+        ng-click="incrementpriority(post)"></img>
+      <img src="https://banner2.kisspng.com/20180401/zrq/kisspng-computer-icons-x-mark-red-x-mark-5ac194bd2469e9.7900394015226359651492.jpg"
+        ng-click="deletePost(post)"></img>
+      <span style="font-size:20px; margin-left:10px;">
+          {{post.title}}
+      </span>
+    </div>
+    
+
+  </script>
+</body>
+</html>

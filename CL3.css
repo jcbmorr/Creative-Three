@@ -1,0 +1,15 @@
+body {
+  background-color: #3FEEE6;
+  font-family: "Lucida Console", Monaco, monospace;
+  color: Black;
+  margin-left: 115px;
+    background-image: url(https://images.freecreatives.com/wp-content/uploads/2015/04/white-linen-paper-texture.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+img {
+    width: 25px;
+    padding-top: 10px;
+}
